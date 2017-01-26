@@ -14,6 +14,10 @@ return array(
 	 * with DbView::field()
 	 */
 	'model_default_field' => 'content',
-
+	
+	/**
+	* the default compile directory
+	*/
+	'compile_dir' => storage_path('app/db-blade-compiler/views'),
     'cache' => false
 );
