@@ -42,7 +42,7 @@ class DbBladeCompilerServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(DbBladeCompiler::class, function($app) {
-            $cache_path = storage_path('app/db-blade-compiler/views');
+            $cache_path = $app['config']->get('db-blade-compiler.compile_dir', storage_path('app/db-blade-compiler/views'));
 
             return new DbBladeCompiler($app['files'], $cache_path, $app['config']);
         });
